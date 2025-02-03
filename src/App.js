@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import MintNFT from "./components/MintNFT";
+import DepositNFT from "./components/DepositNFT";
+import DepositUSDC from "./components/DepositUSDC";
+import ConfirmTrade from "./components/ConfirmTrade";
+import { Web3Provider } from "./context/Web3Context";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Web3Provider>
+      <div>
+        <h1>NFT Escrow DApp</h1>
+        <MintNFT />
+        <DepositNFT />
+        <DepositUSDC />
+        <ConfirmTrade party="A" />
+        <ConfirmTrade party="B" />
+      </div>
+    </Web3Provider>
   );
 }
 
